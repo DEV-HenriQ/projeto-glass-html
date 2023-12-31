@@ -1,0 +1,304 @@
+@charset "UTF-8"; /* Para evitar problemas, vamos utilizar o padrão UTF-8, que dá suporte para acentos e caracteres especiais */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@font-face { /*Importando Fonte do computador*/
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+
+
+body /* Estilo do corpo do nosso site */
+{
+    background-color: #dddddd;
+    color: rgba(0, 0, 0, 1);
+    font-family: Arial, sans-serif;
+}
+
+a
+{
+    color: #606060;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+div#interface
+{
+    width: 900px;
+    background-color: white;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+header#cabecalho img#icone
+{
+    position: absolute;
+    left: 780px;
+    top: 70px;
+}
+
+header#cabecalho
+{
+    border-bottom: 1px #606060 solid; /* Borda preta no cabeçalho*/
+    height: 150px; /* Altura do cabeçãlho*/
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px; /* Inserindo uma foto no cabeçalho. O parâmetro 'no-repeat' indica que não queremos a replicação da imagem dentro do cabeçalho. 0px é o deslocamento horizontal, que não vai ser nenhum. 80px é o deslocamento vertical, de 80 pixels, a partir de cima para baixo*/
+}
+
+header#cabecalho h1
+{
+    font-family: 'FonteLogo',sans-serif; /* Definindo a fonte*/
+    font-size: 30pt; /* Definindo o tamanho da fonte*/
+    color: #606060; /* Definindo a cor do texto*/
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); /* Colocando uma sombra no texto*/
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2
+{
+    /*font-family: Arial, sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15pt;
+    color: #888888;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+
+p /* Estilo de todos os parágrafos do nosso site */
+{
+    text-align: justify; /* Justifica o texto */
+    text-indent: 50px; /* Põe um começo de 50px de identação */
+}
+
+
+
+/* Formatação de imagens com legendas */
+
+figure.foto-legenda /* Estilo de todos os figures com class "foto-legenda" */
+{
+    position: relative; /* Esse elemento ficará na sua posição original */
+    border: 8px solid white; /* Borda da foto */
+    box-shadow: 1px 1px 4px black; /* Sombra de 1px largura, 1px altura, 4px de espalhamento */
+}
+figure.foto-legenda img /* Estilo das imagens dos figure de classe "foto-legenda" */
+{
+    width: 100%; /* Dizendo que a largura ficará a 100%, ajustando no site */
+    height: 100%; /* Dizendo que a altura ficará a 100%, ajustando no site */
+}
+figure.foto-legenda figcaption /* Estilo da legenda da imagem dos figure de class "foto-legenda" */
+{
+    opacity: 0; /* Esconde a legenda */
+    position: absolute; /* Esse elemento ficará em uma posição absoluta dentro de seu pai (figure), com 0px de diferença para o topo da borda da imagem */
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.4); /* Colocando sombreado preto na legenda da imagem */
+    color: white; /* Mudando a cor da letra da legenda */
+    width: 100%; /* Colocando o fundo sombreado em 100% de largura */
+    height: 100%; /* Colocando o fundo sombreado em 100% de altura */
+    padding: 10px; /* Espaçamento do topo de 10px */
+    box-sizing: border-box; /* Isso vai criar um box dentro da borda */
+    transition: opacity 1s; /* Criando efeito de aparecer e desaparecer em 1s */
+}
+
+figure.foto-legenda:hover figcaption /* Quando o mouse passar encima da imagem, ela vai sair de opacidade 0 para opacidade 100 */
+{
+    opacity: 100;
+}
+
+/*Formatando o menu */
+
+nav#menu
+{
+    display: block; /* Faz com que o menu seja exibido como um bloco, pois um bloco pode flutuar pela tela */
+}
+
+
+nav#menu ul /* Formatando a unordered list */
+{
+    list-style: none; /* Sumindo com as bolinhas demarcadoras */
+    text-transform: uppercase; /* Transformando em letras maiúsculas */
+    position: absolute; /* Faz com que minha lista fique em qualquer posição do site */
+    top: -20px;
+    left: 300px;
+}
+
+nav#menu li /* Formatando os itens da lista unordered list */
+{
+    display: inline-block; /* Colocando os itens um ao lado do outro*/
+    background-color: #dddddd; /* Colocando cor de fundo */
+    padding: 10px; /* Espaçando os itens (parte interna) */
+    margin: 2px; /* Espaçando os itens (parte externa) */
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;
+}
+nav#menu li:hover /*Efeito quando passa o mouse encima de cada botão*/
+{
+    background-color: #606060;
+}
+
+nav#menu h1
+{
+    display: none; /* Escondendo o menu principal, pois não vamos usar ele no site, mas ele vai ser importante nos mecanismos de busca */
+}
+
+nav#menu a /* Todo item de nav de id menu que tenha um link */
+{
+    color: black; /* Define a cor de letra preta */
+    text-decoration: none; /* Retira o sublinhado do texto */
+}
+
+nav#menu a:hover /* Ao passar o mouse encima do link contido em Nav de id menu */
+{
+    color: white; /* Muda a cor do texto para branco */
+    text-decoration: underline; /* Sublinha o texto quando passa o mouse encima */
+}
+
+section#corpo
+{
+    display: block;
+    width: 500px;
+    float: left;
+    border-right: #606060 1px solid;
+    padding-right: 15px;
+    padding-bottom: 20px;
+}
+
+table#tabelaspec
+{
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaspec td
+{
+    border: 1px solid #606060;
+    padding: 10px;
+    vertical-align: center;
+    text-align: middle;
+}
+
+table#tabelaspec td.ce
+{
+    color: white;
+    background-color: #606060;
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabelaspec td.cd
+{
+    background-color: #cecece;
+    text-align: left;
+}
+
+table#tabelaspec caption
+{
+    color: #888888;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+table#tabelaspec caption span
+{
+    font-size: 8pt;
+    display: block;
+    float: right;
+    color: black;
+    margin-top: 10px;
+
+}
+
+aside#lateral
+{
+    display: block;
+    width: 350px;
+    float: right;
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+aside#lateral h1
+{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2
+{
+    font-size: 13pt;
+    padding: 5px;
+    background-color: #606060;
+    color:white
+}
+
+footer#rodape
+{
+    clear: both;
+    border-top: #606060 1px solid;
+}
+
+footer#rodape p
+{
+    text-align: center;
+}
+
+article#noticia-principal h2
+{
+    font-size: 12pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-artigo h1
+{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color:#606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+header#cabecalho-artigo h2
+{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: white;
+    margin: 0px;
+}
+
+header#cabecalho-artigo h3
+{
+    font-size: 12px;
+    color: #606060;
+}
+
+.direita
+{
+    text-align: right;
+}
+
+#v2
+{
+    width: 350px;
+}
+
+#v1
+{
+    width: 500px;
+    margin: auto;
+}
